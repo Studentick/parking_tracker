@@ -16,7 +16,8 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
-## Installation
+## Misc
 
-Username: adminuser
+Username: adminuser  
+
 Password: admin
