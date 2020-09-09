@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'SocApp',
+    'social_django',
     'admin_interface',
     'colorfield',
     'django.contrib.admin',
@@ -56,10 +58,13 @@ ROOT_URLCONF = 'parkingtracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+                # update the context_processors inside TEMPLATE
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -101,6 +106,36 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
+#-----------------------------------------------------
+# Add desired authentication backends to Django’s AUTHENTICATION_BACKENDS setting: basically we have added Facebook, Github
+# and Linkedin authentication backends. Don’t miss django.contrib.auth.backends.ModelBackend
+# if using django.contrib.auth application or users won’t be able to login by username / password method.
+
+
+AUTHENTICATION_BACKENDS = [
+
+
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.github.GithubOAuth2',
+    
+
+    'django.contrib.auth.backends.ModelBackend',
+
+
+]
+
+
+SOCIAL_AUTH_FACEBOOK_KEY    =    '711510609429088'    # Facebook App    ID
+SOCIAL_AUTH_FACEBOOK_SECRET    =    '61f2f1338306e01e973e7c3ffa9340e3'    # Facebook App Secret
+
+
+SOCIAL_AUTH_GITHUB_KEY = '6bbf8ee92be63ce53893'     # github id     
+SOCIAL_AUTH_GITHUB_SECRET = 'b80e43b8030ddd3eef97518a8b99c33f5fed64d6'  # github secret key
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

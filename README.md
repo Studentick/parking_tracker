@@ -21,3 +21,9 @@ python manage.py runserver
 Username: adminuser  
 
 Password: admin
+
+
+## Аутентификация
+
+Login:  http://localhost:8000/accounts/login/
+Logout: http://localhost:8000/accounts/logout/
