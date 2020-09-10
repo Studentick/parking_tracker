@@ -119,7 +119,7 @@ AUTHENTICATION_BACKENDS = [
 
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.github.GithubOAuth2',
-    
+    'social_core.backends.google.GoogleOAuth2',
 
     'django.contrib.auth.backends.ModelBackend',
 
@@ -133,6 +133,9 @@ SOCIAL_AUTH_FACEBOOK_SECRET    =    '61f2f1338306e01e973e7c3ffa9340e3'    # Face
 
 SOCIAL_AUTH_GITHUB_KEY = '6bbf8ee92be63ce53893'     # github id     
 SOCIAL_AUTH_GITHUB_SECRET = 'b80e43b8030ddd3eef97518a8b99c33f5fed64d6'  # github secret key
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '162237035932-c7jbd84uvgn3voeqk7g43vr1ondq71s5.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'MBbujLYu1rprOVmHOGnbfdDM'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
