@@ -7,3 +7,4 @@ django-flat-theme==1.1.4
 pytz==2020.1
 six==1.15.0
 sqlparse==0.3.1
+social-auth-app-django==4.0.0
